@@ -1,3 +1,8 @@
+/**
+ * @file App.vue
+ * @description The main component of the Vue.js application.
+ */
+
 <script setup>
 import HelloWorld from './components/HelloWorld.vue'
 import TheWelcome from './components/TheWelcome.vue'

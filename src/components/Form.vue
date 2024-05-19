@@ -1,6 +1,21 @@
+/**
+ * Component representing a form.
+ *
+ * @slot help - The help content to be displayed above the form.
+ * @slot fields - The form fields to be displayed.
+ * @slot buttons - The buttons to be displayed below the form.
+ */
 <template>
     <form>
-        <slot>No form to render</slot>
+        <div class="help">
+            <slot name="help"></slot>
+        </div>
+        <div class="field">
+            <slot name="fields"></slot>
+        </div>
+        <div class="buttons">
+            <slot name="buttons"></slot>
+        </div>
     </form>
 </template>
 

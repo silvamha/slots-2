@@ -1,32 +1,39 @@
 /**
-* @file App.vue
-* @description The main component of the Vue.js application.
-*/
+ * @file App.vue
+ * @description The main component of the Vue.js application.
+ */
+
 <template>
   <app-form>
-    <div class="help">
+    <!-- Slot for help text -->
+    <template v-slot:help>
       <p>This is some help text.</p>
-    </div>
-    <div class="fields">
+    </template>
+    <!-- Slot for form fields -->
+    <template v-slot:fields>
       <input type="text" placeholder="email">
       <input type="text" placeholder="admin">
       <input type="password" placeholder="password">
-    </div>
-    <div class="buttons">
+    </template>
+    <!-- Slot for buttons -->
+    <template v-slot:buttons>
       <button type="submit">Submit</button>
-    </div>
+    </template>
   </app-form>
   <app-form>
-    <div class="help">
+    <!-- Slot for help text -->
+    <template v-slot:help>
       <p>Contact help text.</p>
-    </div>
-    <div class="fields">
+    </template>
+    <!-- Slot for form fields -->
+    <template v-bind="fields">
       <input type="text" placeholder="name">
       <input type="text" placeholder="message">
-    </div>
-    <div class="buttons">
+    </template>
+    <!-- Slot for buttons -->
+    <template v-slot:buttons">
       <button type="submit">Submit</button>
-    </div>
+    </template>
   </app-form>
 </template>
 

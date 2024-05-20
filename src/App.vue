@@ -1,13 +1,13 @@
 /**
- * @file App.vue
- * @description The main component of the Vue.js application.
- */
+* @file App.vue
+* @description The main component of the Vue.js application.
+*/
 
 <template>
   <app-form>
     <!-- Slot for help text -->
     <template v-slot:help>
-      <p>This is some help text.</p>
+      <p>{{ help }}</p>
     </template>
     <!-- Slot for form fields -->
     <template v-slot:fields>
@@ -19,6 +19,7 @@
     <template v-slot:buttons>
       <button type="submit">Submit</button>
     </template>
+    <p>Dummy Text</p>
   </app-form>
   <app-form>
     <!-- Slot for help text -->
@@ -26,12 +27,12 @@
       <p>Contact help text.</p>
     </template>
     <!-- Slot for form fields -->
-    <template v-bind="fields">
+    <template v-slot:fields>
       <input type="text" placeholder="name">
       <input type="text" placeholder="message">
     </template>
     <!-- Slot for buttons -->
-    <template v-slot:buttons">
+    <template v-slot:buttons>
       <button type="submit">Submit</button>
     </template>
   </app-form>
@@ -45,6 +46,11 @@ export default {
   name: 'App',
   components: {
     AppForm,
+  },
+  data() {
+    return {
+      help: 'This is some help text.',
+    }
   }
 }
 </script>

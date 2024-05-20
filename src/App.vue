@@ -35,7 +35,6 @@
       <button type="submit">Submit</button>
     </template>
   </app-form>
-  <p>{{ msg }}</p>
 </template>
 
 
@@ -44,7 +43,6 @@ import AppForm from './components/Form.vue'
 
 export default {
   name: 'App',
-  msg: 'This is only a test.',
   components: {
     AppForm,
   }
